@@ -1,0 +1,19 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+    <h2>博客标题: {{ blog.title }}</h2><br>
+    <h3>摘要: {{ blog.maincontent }}</h3><br>
+    <h4>内容: {{ blog.description }}</h4><br>
+    <h5>{{ blog.author }}发表于{{ blog.created_at }}
+    </h5><br>
+
+    <form action="/myblog/delete/{{ blog.id }}/" method="post" style="display: inline">{% csrf_token %}
+        <button class="btn btn-danger">删除</button>
+    </form>
+    <form action="/myblog/update/{{ blog.id }}/" method="get" style="display: inline">{% csrf_token %}
+        {#        注意请求方法为get#}
+        <button class="btn btn-success">修改</button>
+    </form>
+
+{% endblock %}

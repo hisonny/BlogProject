@@ -1,0 +1,17 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+    <table class="table" width="100" cellspacing="5" cellpadding="5" border="1">
+    <tr>
+        {% for photo in photos %}
+        <td>
+                    <img src="{{ photo.img.url }}" width="240" height="240"><br>
+        </td>
+        {% if forloop.counter|divisibleby:4 %}
+    </tr>
+    {% endif %}
+    {% endfor %}
+
+</table>
+{% endblock %}

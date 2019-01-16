@@ -1,0 +1,21 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+
+    {% if user.is_authenticated  %}
+    <ul>
+        <li><p class="text" style="font-size: 50px"> 欢迎光临</p></li>
+{#        <li><a href="/user/logout_last/">退出</a></li>#}
+    </ul>
+    {% else %}
+    <ul>
+        <li>You haven't login your acount!!!</li>
+        <li><a href="{% url 'user_login'%}">Please click here to login!</a></li>
+    </ul>
+{% endif %}
+
+
+
+{% endblock %}
+

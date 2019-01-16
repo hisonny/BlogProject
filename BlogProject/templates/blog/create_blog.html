@@ -1,0 +1,29 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block center  %}
+    <div style="width: 400px; margin-left: 50px;">
+    <br>
+    <h3>添加博客</h3><hr>
+    <form method="post" action="{% url 'create_blog' %}" enctype="multipart/form-data">{% csrf_token %}
+  <fieldset class="form-group">
+    <label for="title">标题</label>
+    <input type="text" class="form-control" name="title" placeholder="请输入博客的标题">
+  </fieldset>
+  <fieldset class="form-group">
+    <label for="title">摘要</label>
+    <input type="text" class="form-control" name="maincontent" placeholder="请输入博客的摘要">
+  </fieldset>
+  <fieldset class="form-group">
+    <label for="description">内容</label>
+    <textarea class="form-control" name="description" rows="3"></textarea>
+  </fieldset>
+{#  <fieldset class="form-group">#}
+{#    <label for="image">选择图片</label>#}
+{#    <input type="file" class="form-control-file" name="img">#}
+{#    <small class="text-muted"></small>#}
+{#  </fieldset>#}
+  <button type="submit" class="btn btn-primary">发布</button>
+</form>
+</div>
+{% endblock %}

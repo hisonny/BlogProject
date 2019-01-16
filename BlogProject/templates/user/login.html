@@ -1,0 +1,118 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block center %}
+    <h1>登录页面</h1>
+     <form class="form-horizontal" method="post" action="/user/login/">
+        {% csrf_token %}
+         <div class="form-group">
+             <div class="col-sm-4"></div>
+            <label for="" class="col-sm-4 control-label">{{ msg }}</label>
+            <div class="col-sm-4"></div>
+        </div>
+        <div class="form-group">
+            <label for="" class="col-sm-4 control-label">用户名：</label>
+            <div class="col-sm-8">
+                <input name="username" type="text" class="form-control" id="inputEmail3" placeholder="用户名">
+                <span class="help-block text-danger">
+                    {{ username }}
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword3" class="col-sm-4 control-label">密码：</label>
+            <div class="col-sm-8">
+                <input name="password" type="password" class="form-control" id="inputPassword3" placeholder="密码">
+                <span class="help-block text-danger">
+                    {{ password }}
+                </span>
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> 记住密码
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">登录</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}
+
+
+
+
+
+
+{#{% load  static %}#}
+{##}
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Title</title>#}
+{#    <script src="{% static 'js/jquery-1.11.2.min.js' %}"></script>#}
+{#</head>#}
+{#<body>#}
+{#<form action="/user/login/"  method="post">#}
+{##}
+{#    <input type="text"  name="username">#}
+{##}
+{#    <input type="password"  name="password">#}
+{#    <img onclick="change_code(this)" src="data:image/jpeg;base64,{{ base64_code }}" alt="">#}
+{##}
+{#    <img id='code' onclick="change_code(this)" src="" alt="">#}
+{##}
+{#    <input type="text" name="verify_code">#}
+{##}
+{#    <input type="submit"  value="登录">#}
+{##}
+{#</form>#}
+{##}
+{#</body>#}
+{#</html>#}
+{##}
+{#<script>#}
+{##}
+{##}
+{#    window.onload = change_code($('#code'));#}
+{##}
+{##}
+{##}
+{#    function change_code(obj) {#}
+{#        $(obj).removeAttr('src');#}
+{#        //发送请求,获得新的验证码图片#}
+{#        $.get('/user/get_code/',function (resp_data) {#}
+{##}
+{#            $(obj).attr('src',"data:image/jpeg;base64," + resp_data)#}
+{#            }#}
+{##}
+{#        );#}
+{##}
+{#    }#}
+{##}
+{#</script>#}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

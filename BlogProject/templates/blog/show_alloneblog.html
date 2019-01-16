@@ -1,0 +1,13 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+    <form action="" method="post">
+    <h2>博客标题: {{ blog.title }}</h2><br>
+    <h3>摘要: {{ blog.maincontent }}</h3><br>
+    <h4>内容: {{ blog.description }}</h4><br>
+    <h5>{{ blog.author }}发表于{{ blog.created_at }}
+    </h5><br>
+        <textarea class="form-control" name="comment" rows="3" placeholder="请输入你的评论..."></textarea><br>
+        <input type="submit" value="评论" class="btn btn-info">
+    </form>
+{% endblock %}

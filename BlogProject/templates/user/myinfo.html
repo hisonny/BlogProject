@@ -1,0 +1,45 @@
+{% extends 'base/base.html' %}
+
+
+    {% block center %}
+
+
+    <h1>个人信息</h1>
+    {#    # Django的form的作用：#}
+    {## 1、生成html标签#}
+    {## 2、用来做用户提交的验证#}
+
+    <form class="form-horizontal" method="get" action="{% url 'updateinfo' %}">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="" class="col-sm-4 control-label">用户名：</label>
+            <div class="col-sm-8">
+                <label for="" class="col-sm-8 control-label">{{ user.username }}</label>
+            </div>
+        </div>
+         <div class="form-group">
+            <label for="inputEmail3" class="col-sm-4 control-label">邮箱:</label>
+            <div class="col-sm-8">
+                <label for="" class="col-sm-8 control-label">{{ user.email }}</label>
+            </div>
+         </div>
+         <div class="form-group">
+            <label for="" class="col-sm-4 control-label">年龄:</label>
+            <div class="col-sm-8">
+                 <label for="" class="col-sm-8 control-label">{{ user.age }}</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="col-sm-4 control-label">手机号:</label>
+            <div class="col-sm-8">
+                 <label for="" class="col-sm-8 control-label">{{ user.phone }}</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">修改个人信息</button>
+            </div>
+        </div>
+    </form>
+    {% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+    <h2>博客标题:  {{ blog.title }}</h2><br>
+    <h3>摘要:  {{ blog.maincontent }}</h3><br>
+    <h4>内容:  {{ blog.description }}</h4><br>
+    <h5>{{ blog.author }}发表于{{ blog.created_at }}
+    </h5><br>
+     <form action="" method="post" style="display: inline">{% csrf_token %}
+    <button class="btn btn-danger">评论</button>
+    </form>
+
+    </form>
+{% endblock %}

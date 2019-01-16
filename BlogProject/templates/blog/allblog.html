@@ -1,0 +1,26 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+    <hr>
+    <table class="table" width="100" cellspacing="5" cellpadding="5" border="1">
+            {% for blog in blogs %}
+                <tr>
+
+                        <a href="/myblog/details/{{ blog.id }}/">
+                            <h3>标题:{{ blog.title }}</h3><br>
+                        </a>
+                             <h4>摘要:{{ blog.maincontent }}</h4><br>
+                             <h5>{{ blog.author }}于{{ blog.created_at }}发表</h5>
+
+
+                </tr>
+                <br>
+                <hr>
+                {% if forloop.counter|divisibleby:4 %}
+
+                {% endif %}
+            {% endfor %}
+
+    </table>
+
+{% endblock %}
